@@ -1,0 +1,190 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf370
+{\fonttbl\f0\fnil\fcharset0 LucidaGrande;\f1\fnil\fcharset0 HelveticaNeue;\f2\fswiss\fcharset0 ArialMT;
+\f3\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red32\green0\blue99;\red26\green26\blue26;\red38\green38\blue38;
+\red255\green39\blue18;\red217\green11\blue0;\red117\green117\blue117;\red255\green255\blue255;\red0\green0\blue233;
+\red26\green26\blue26;\red9\green77\blue192;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww15000\viewh12200\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs26 \cf2 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\b\fs48 \cf2 Proceso en Git:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\b0\fs26 \cf2 Para comenzar hacemos un git init para crear nuestro repositorio en la carpeta en la que estemos ubicados.\
+git add . (a\'f1adimos todo lo que haya.)\
+git commit -m "primer commit" \
+git status: se hace para ver lo que se ha modificado,nos avisa de hacer un git add\
+git push origin +HEAD (Esto se pone cuando no funcione el git push origin por defecto)\
+\
+\
+\pard\pardeftab720\sl340
+\cf2 \ul \ulc2 Si queremos alg\'fan archivo en concreto.\
+\ulnone git add archivo.txt\
+git commit -m "comentario" archivo.txt\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf2 git push origin\
+--------\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf2 \ul gitignore\ulnone : excluye archivos a la hora de subirlos al repositorio.\
+\ul eliminar\ulnone  \ul archivos\ulnone .: \cf3 git rm nombre_archivo y git push para eliminarlo,\cf4 git add . ,git  commit\
+\pard\pardeftab720\sl340
+\cf4 \
+\
+Solucion frente a un archivo modificado en git local y persiste en GitHub:\
+\pard\pardeftab720\sl280
+
+\fs22 \cf4 tu si quieres que los cambios que has hecho en local se pongan en github\
+entonces si haces un push\
+puedes ir trabajando mientras en local\
+y cuando veas necesario publicarlo en github pues haces push\
+\pard\pardeftab720\sl340
+
+\fs26 \cf4 \
+\
+\
+\
+\
+\pard\pardeftab720\sl340
+
+\b\fs48 \cf4 Ejemplo  Creacion y conexi\'f3n Repositorios\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\b0\fs26 \cf0 \
+\pard\pardeftab720\sl340
+\cf0 nano ~/.gitconfig (veremos nuestro email y nuestro nick)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 Si tenemos alg\'fan repositorio no podremos hacer un git ini , establecemos la secuencia\
+\pard\pardeftab720\sl340
+\cf0 rm -R .git/ para eliminar forzosamente lo que tengamos,git tiene los archivos ocultos.\
+\pard\pardeftab720\sl340
+
+\b\fs48 \cf4 \
+\pard\pardeftab720\sl340
+
+\fs26 \cf5 Clonando un repositorio de gitHub\
+\pard\pardeftab720\sl340
+
+\b0 \cf4 Si queremos descargarnos un repositorio de github, clonamos en nuestro git, creando una carpeta para poder guardarlo dentro.\
+git clone (ej ruta)//https://github.com/Mejorandola/curso-responsive-design.git\
+\
+\
+\pard\pardeftab720\sl340
+
+\b \cf6 Como conectar mi pc a git por ssh:\
+\pard\pardeftab720\sl340
+
+\b0 \cf4 ssh-keygen\
+Automaticamnete creara un archivo y lo guardara donde nos convenga.\
+Enter file in which to save the key (/Users/albertocg/.ssh/id_rsa): /Users/albertocg/.ssh/mejorandola \
+\
+Nos pedira pass:\
+Una vez eso le daremos la clave ssh a git hub, primeramente copiamos de nuestro archivo pub la key.\
+cat ~/.ssh/archivo.pub (altgr y \'f1),copiamos la clave y  nos situamos en settings/sshkeys/add\
+ y la pegamos ah\'ed (en github),clave \'fanica para todos mis repositorios\
+\
+\
+\pard\pardeftab720\sl340
+
+\b \cf6 Creando nuevo proyecto:\
+\pard\pardeftab720\sl340
+
+\b0 \cf4 git init\
+touch README2\
+git add README2\
+git status\
+git commit -m "este es el primer archivo en mejorandola"\
+\
+\pard\pardeftab720\sl340
+\cf4 \ul Ahora querremos conectar nuestro repositorio de github web con nuestro git local.\
+Solo tendremos una sshKEy para todos nuestros repos.\
+\
+\pard\pardeftab720\sl340
+\cf4 \ulnone git remote add origin git@github.com:albel1986/neuroworkJquery.git\cf4 \
+(si no nos salta error la clave ssh estara correcta y todo funcionando, conectandose remotamente.)\
+\
+\pard\pardeftab720\sl340
+\cf4 \ul Conectaremos nuestros dos repositorios (escritorio vs github)\
+\pard\pardeftab720\sl340
+\cf4 \ulnone git pull origin master (le estaremos diciendo git traeme todo el contenido de github a mi pc.(solo tenemos el archivo readme)\
+Ahora queremos enviar nuestro c\'f3digo a gitHub\
+git push origin master (puede que no funcione,)\
+Si no funcionase git push origin master deber\'edamos hacer un git add .   o    git add de archivo en concreto,hacer un commit  -m y\
+git push origin (sin master), y se nos habr\'e1 subido.\
+\
+\
+
+\b\fs36 Modificando Archivos:\
+
+\b0\fs26 Modificamos por ejemplo archivo Readme.\
+Git status (nos dita que queda pendiente algo que se ha modificado)\
+git add readme\
+git commit -m "modificando rearme"\
+giro push origin master\
+\
+Otra manera de actualizar nuestro repo:\
+\pard\pardeftab720\sl340
+\cf4 git add -u (update).\cf4 \
+\pard\pardeftab720\sl380
+
+\f1 \cf7 \cb8 git remote remove origin (elimina los git remotos)\
+\
+\
+
+\f0\b\fs36 \cf4 \cb1 Comprobando los pullRequest de otras personas:\
+
+\b0\fs26 Modificacion de nuestro c\'f3digo a traves de otras personas.\
+\pard\pardeftab720
+{\field{\*\fldinst{HYPERLINK "https://github.com/albel1986/MiGit/pulls"}}{\fldrslt 
+\f2 \cf9 \cb8 \ul \ulc9 https://github.com/albel1986/MiGit/pulls}}
+\f2 \cf9 \cb8 \ul \ulc9 \
+\pard\pardeftab720\sl380
+
+\f0 \cf4 \cb1 \ulnone En esta direcci\'f3n ver\'edamos nuestros pulls(el c\'f3digo que nos modifican las dem\'e1s personas)\
+El c\'f3digo que vemos modificado se presenta de color verde.\cf4 \
+\pard\pardeftab720\sl380
+
+\b\fs36 \cf4 \
+\
+Modificando c\'f3digo de otras personas:\
+
+\b0\fs26 Nos metemos  en el c\'f3digo que queremos modificar y le pulsamos en fork-\
+\pard\pardeftab720
+{\field{\*\fldinst{HYPERLINK "https://github.com/RubenGuerrero/ARDroneNodeTest"}}{\fldrslt 
+\f2 \cf9 \cb8 \ul \ulc9 https://github.com/RubenGuerrero/ARDroneNodeTest}}
+\f2 \cf9 \cb8 \ul \ulc9 \
+\pard\pardeftab720\sl380
+
+\f0 \cf4 \cb1 \ulnone A continuaci\'f3n hacemos un git clone {\field{\*\fldinst{HYPERLINK "https://github.com/albel1986/ARDroneNodeTest.git"}}{\fldrslt 
+\f2 \cf9 \cb8 \ul \ulc9 https://github.com/albel1986/ARDroneNodeTest.git}}
+\f2 \cf9 \cb8 \ul \ulc9 \
+
+\f0 \cf4 \cb1 \ulnone Y modificamos parte de alg\'fan c\'f3digo , una vez clonado no hada falta que hagamos un git imi ya que viene con el clone\
+por defecto creado, una vez modificado el c\'f3digo ,hacemos un git commit -m "test" y a continuacion git push origin master ,despu\'e9s nos pedir\'e1 las credenciales nuestras.\
+Una vez hecho el proceso nos dirigimos a:\
+\pard\pardeftab720
+
+\f2 \cf10 \cb8  {\field{\*\fldinst{HYPERLINK "https://github.com/albel1986/ARDroneNodeTest"}}{\fldrslt \cf11 \ul \ulc11 \uc0\u8234 https://github.com/albel1986/ARDroneNodeTest}}
+\f0 \cf4 \cb1 \
+\pard\pardeftab720\sl380
+\cf4 New PullRequest/
+\f2 \cf10 \cb8 Click to create a pull request for this comparasion/send pull request\
+para finalizar, el usuario al que le hemos modificado el c\'f3digo puede hacer un merge(unir mi c\'f3digo y el suyo).
+\f0 \cf4 \cb1 \
+\pard\pardeftab720\sl340
+\cf4 \
+\
+\
+\
+\
+\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f3\b\fs28 \cf2 \
+}
